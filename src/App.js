@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import Card from "./Card";
+//function products
 function App() {
+  const products = [
+    { name: "vest", price: 50 },
+    { name: "jacket", price: 70 },
+    { name: "sweater", price: 20 },
+    { name: "tshirt", price: 40 },
+    { name: "necklace", price: 70 },
+    { name: "jumper", price: 40 },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {products.map((product) => (
+        <Card name={product.name} price={product.price} />
+      ))}
     </div>
   );
 }
